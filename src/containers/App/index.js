@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from "react-redux";
 import ErrorToast from "../../components/ErrorToast";
 import { actions as appActions, getError } from "../../redux/modules/app";
-import Home from '../Home'
-
+import Home from '../Home';
+import ProductDetail from '../ProductDetail';
 
 class App extends Component {
   render() {
@@ -17,6 +17,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <Switch>
+            <Route path="/detail/:id" component={ProductDetail}></Route>
             <Route path="/" component={Home}></Route>
           </Switch>
         </Router>
