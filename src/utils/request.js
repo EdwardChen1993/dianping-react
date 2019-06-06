@@ -11,7 +11,11 @@ function get(url) {
     return handleResponse(url, response);
   }).catch(error => {
     console.error(`Request failed. Url = ${url}. Message = ${error}`)
-    return Promise.reject({error: {message: "Request failed."}})
+    return Promise.reject({
+      error: {
+        message: "Request failed."
+      }
+    })
   })
 }
 
@@ -24,17 +28,28 @@ function post(url, data) {
     return handleResponse(url, response);
   }).catch(error => {
     console.error(`Request failed. Url = ${url}. Message = ${error}`)
-    return Promise.reject({error: {message: "Request failed."}})
+    return Promise.reject({
+      error: {
+        message: "Request failed."
+      }
+    })
   })
 }
 
 function handleResponse(url, response) {
-  if(response.status === 200) {
+  if (response.status === 200) {
     return response.json();
   } else {
     console.error(`Request failed. Url = ${url}`)
-    return Promise.reject({error: {message: "Request failed due to server error"}})
+    return Promise.reject({
+      error: {
+        message: "Request failed due to server error"
+      }
+    })
   }
 }
 
-export {get, post}
+export {
+  get,
+  post
+}
