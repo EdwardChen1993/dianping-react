@@ -28,7 +28,7 @@ class App extends Component {
             <Route path="/detail/:id" component={ProductDetail}></Route>
             <Route path="/search" component={Search}></Route>
             <Route path="/search_result" component={SearchResult}></Route>
-            <PrivateRoute path="/purchase" component={Purchase}></PrivateRoute>
+            <PrivateRoute path="/purchase/:id" component={Purchase}></PrivateRoute>
             <Route path="/" component={Home}></Route>
           </Switch>
         </Router>
